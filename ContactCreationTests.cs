@@ -42,13 +42,26 @@ namespace WebAddressbookTests
         [Test]
         public void ContactCreationTest()
         {
-            driver.Navigate().GoToUrl(baseURL + "/addressbook/");
-            driver.FindElement(By.Name("user")).Clear();
-            driver.FindElement(By.Name("user")).SendKeys("admin");
-            driver.FindElement(By.Name("pass")).Clear();
-            driver.FindElement(By.Name("pass")).SendKeys("secret");
-            driver.FindElement(By.CssSelector("input[type=\"submit\"]")).Click();
-            driver.FindElement(By.LinkText("add new")).Click();
+            OpenHomePage();
+            Login();
+            InitContactCreation();
+            FillContactForm();
+            SubmitContactCreation();
+            ReturnToHomePage();
+        }
+
+        private void ReturnToHomePage()
+        {
+            driver.FindElement(By.LinkText("home page")).Click();
+        }
+
+        private void SubmitContactCreation()
+        {
+            driver.FindElement(By.XPath("(//input[@name='submit'])[2]")).Click();
+        }
+
+        private void FillContactForm()
+        {
             driver.FindElement(By.Name("firstname")).Clear();
             driver.FindElement(By.Name("firstname")).SendKeys("qqqq");
             driver.FindElement(By.Name("middlename")).Clear();
@@ -93,8 +106,25 @@ namespace WebAddressbookTests
             driver.FindElement(By.Name("phone2")).SendKeys("7777");
             driver.FindElement(By.Name("notes")).Clear();
             driver.FindElement(By.Name("notes")).SendKeys("asdfgh");
-            driver.FindElement(By.XPath("(//input[@name='submit'])[2]")).Click();
-            driver.FindElement(By.LinkText("home page")).Click();
+        }
+
+        private void InitContactCreation()
+        {
+            driver.FindElement(By.LinkText("add new")).Click();
+        }
+
+        private void Login()
+        {
+            driver.FindElement(By.Name("user")).Clear();
+            driver.FindElement(By.Name("user")).SendKeys("admin");
+            driver.FindElement(By.Name("pass")).Clear();
+            driver.FindElement(By.Name("pass")).SendKeys("secret");
+            driver.FindElement(By.CssSelector("input[type=\"submit\"]")).Click();
+        }
+
+        private void OpenHomePage()
+        {
+            driver.Navigate().GoToUrl(baseURL + "/addressbook/");
         }
         private bool IsElementPresent(By by)
         {
