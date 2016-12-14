@@ -36,10 +36,7 @@ namespace WebAddressbookTests
             contact.Address2 = "vxcfdgd, 43";
             contact.Phone2 = "836784";
             contact.Notes = "sdfdfgd fghfghtfgh fghfdhdf";
-            app.Contacts.InitContactCreation()
-                .FillContactForm(contact)
-                .SubmitContactCreation();
-            app.Navigator.ReturnToHomePage();
+            app.Contacts.Create(contact);
         }
     }
 }
