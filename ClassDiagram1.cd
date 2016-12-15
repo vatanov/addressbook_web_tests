@@ -11,10 +11,10 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="WebAddressbookTests.GroupRemovalTests">
-    <Position X="2.75" Y="7.25" Width="1.5" />
+    <Position X="4" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>tests\GroupRemovalTest.cs</FileName>
+      <FileName>tests\GroupRemovalTests.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WebAddressbookTests.GroupCreationTests">
@@ -34,7 +34,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAABAAAAAAAAABAAAAAABMEAAAAAAAABAAAA=</HashCode>
+      <HashCode>AAACIACAAABAAAAAAAAABAAAQAABMEAAAAAAAABAAAA=</HashCode>
       <FileName>appmanager\GroupHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -76,7 +76,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="WebAddressbookTests.ApplicationManager">
-    <Position X="4" Y="2.5" Width="1.75" />
+    <Position X="3.75" Y="2.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>BAAEAEAABAAAAAAAAAAAAASAAAAAgAAAIBCAABAAACA=</HashCode>
       <FileName>appmanager\ApplicationManager.cs</FileName>
@@ -99,15 +99,36 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>AABAIAAACAAEAAAAAAAABAAAAgAAAEAAAAAYAAAAAgA=</HashCode>
       <FileName>appmanager\ContactHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WebAddressbookTests.ContactCreationTests">
-    <Position X="5" Y="7.25" Width="1.5" />
+    <Position X="6.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>tests\ContactCreationTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebAddressbookTests.ContactModificationTests">
+    <Position X="8.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>tests\ContactModificationTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebAddressbookTests.ContactRemovalTests">
+    <Position X="10.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>tests\ContactRemovalTests.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebAddressbookTests.GroupModificationTests">
+    <Position X="2.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>tests\GroupModificationTests.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
