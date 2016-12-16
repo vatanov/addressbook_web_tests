@@ -13,29 +13,29 @@ namespace WebAddressbookTests
         public void ContactModificationTest()
         {
         ContactData modifiedContact = new ContactData("DDDD");
-        modifiedContact.Firstname = "JJJJ";
-        modifiedContact.Middlename = "BBBB";
-        modifiedContact.Nickname = "KKKKK";
-        modifiedContact.Title = "SSSSSSS";
-        modifiedContact.Company = "OOOOOOO";
-        modifiedContact.Address = "FGHFGHFG, 56";
-        modifiedContact.Home = "4545454";
-        modifiedContact.Mobile = "12121212";
-        modifiedContact.Work = "90909090";
-        modifiedContact.Fax = "676767676";
-        modifiedContact.Email = "dfg@bnmg.fg";
-        modifiedContact.Email2 = "mnzx@okw.ua";
-        modifiedContact.Email3 = "bsejh@sdgnu.sez";
-        modifiedContact.Homepage = "www.frks.com";
+        modifiedContact.Firstname = null;
+        modifiedContact.Middlename = null;
+        modifiedContact.Nickname = null;
+        modifiedContact.Title = null;
+        modifiedContact.Company = null;
+        modifiedContact.Address = null;
+        modifiedContact.Home = null;
+        modifiedContact.Mobile = null;
+        modifiedContact.Work = null;
+        modifiedContact.Fax = null;
+        modifiedContact.Email = null;
+        modifiedContact.Email2 = null;
+        modifiedContact.Email3 = null;
+        modifiedContact.Homepage = null;
         modifiedContact.Bday = "23";
         modifiedContact.Bmonth = "June";
-        modifiedContact.Byear = "1979";
+        modifiedContact.Byear = null;
         modifiedContact.Aday = "1";
         modifiedContact.Amonth = "December";
-        modifiedContact.Ayear = "2011";
-        modifiedContact.Address2 = "vxcfdgd, 43";
-        modifiedContact.Phone2 = "0000000";
-        modifiedContact.Notes = "VBCBDFGDFG DFGFDFG DFGDFG";
+        modifiedContact.Ayear = null;
+        modifiedContact.Address2 = null;
+        modifiedContact.Phone2 = null;
+        modifiedContact.Notes = null;
             app.Contacts.Modify(modifiedContact);
         }
     }
