@@ -26,8 +26,8 @@ namespace WebAddressbookTests
 
         private ApplicationManager()
         {
-            //driver = new FirefoxDriver();
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
+            //driver = new ChromeDriver();
             //driver = new InternetExplorerDriver();
             baseURL = "http://localhost";
             loginHelper = new LoginHelper(this);
