@@ -1,0 +1,7 @@
+﻿Lesson 4
+
+Add ALL asserts for groups and contacts
+Compare contacts by Firstname and Lastname
+
+Add cashes  for groups and contacts
+
