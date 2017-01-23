@@ -5,3 +5,5 @@ Compare contacts by Firstname and Lastname
 
 Add cashes  for groups and contacts
 
+Get; Set for contact!!!
+
