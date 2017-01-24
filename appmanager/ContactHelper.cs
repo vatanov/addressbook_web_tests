@@ -13,7 +13,7 @@ namespace WebAddressbookTests
     public class ContactHelper : HelperBase
     {
 
-        public ContactHelper(ApplicationManager manager) 
+        public ContactHelper(ApplicationManager manager)
             : base(manager)
         {
         }
@@ -82,6 +82,7 @@ namespace WebAddressbookTests
         public ContactHelper SubmitContactCreation()
         {
             driver.FindElement(By.XPath("(//input[@name='submit'])[2]")).Click();
+            contactCache = null;
             return this;
         }
 
@@ -89,6 +90,7 @@ namespace WebAddressbookTests
         {
             driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
             driver.SwitchTo().Alert().Accept();
+            contactCache = null;
             return this;
         }
 
@@ -101,6 +103,7 @@ namespace WebAddressbookTests
         public ContactHelper SubmitContactModification()
         {
             driver.FindElement(By.Name("update")).Click();
+            contactCache = null;
             return this;
         }
 
@@ -108,6 +111,32 @@ namespace WebAddressbookTests
         {
             driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
             return this;
+        }
+
+        private List<ContactData> contactCache = null;
+
+
+        public List<ContactData> GetContactList()
+        {
+            if (contactCache == null)
+            {
+                contactCache = new List<ContactData>();
+                manager.Navigator.GoToHomePage();
+                ICollection<IWebElement> rows = driver.FindElements(By.Name("entry"));
+                foreach (IWebElement row in rows)
+                {
+                    ContactData contact = new ContactData(row.FindElement(By.XPath(".//td[2]")).Text);
+                    string firstName = row.FindElement(By.XPath(".//td[3]")).Text;
+                    contact.Firstname = firstName;
+                    contactCache.Add(contact);
+                }
+            }
+            return new List<ContactData>(contactCache);
+        }
+
+        public int GetContactCount()
+        {
+            return driver.FindElements(By.Name("entry")).Count;
         }
     }
 }
