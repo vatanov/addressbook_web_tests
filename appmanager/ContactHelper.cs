@@ -27,9 +27,9 @@ namespace WebAddressbookTests
             return this;
         }
 
-        public ContactHelper Modify(ContactData modifiedContact)
+        public ContactHelper Modify(ContactData modifiedContact, int index)
         {
-            InitContactModification();
+            InitContactModification(index);
             FillContactForm(modifiedContact);
             SubmitContactModification();
             manager.Navigator.ReturnToHomePage();
@@ -107,10 +107,12 @@ namespace WebAddressbookTests
             return this;
         }
 
-        public ContactHelper InitContactModification()
+        public void InitContactModification(int index)
         {
-            driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
-            return this;
+            driver.FindElements(By.Name("entry"))[index]
+                .FindElements(By.TagName("td"))[7]
+                .FindElement(By.TagName("a")).Click();
+            //driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
         }
 
         private List<ContactData> contactCache = null;
@@ -137,6 +139,17 @@ namespace WebAddressbookTests
         public int GetContactCount()
         {
             return driver.FindElements(By.Name("entry")).Count;
+        }
+
+        public ContactData GetContactInformationFromTable()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ContactData GetContactInformationFromEditForm()
+        {
+            
+            throw new NotImplementedException();
         }
     }
 }
