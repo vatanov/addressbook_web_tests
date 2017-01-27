@@ -143,8 +143,9 @@ namespace WebAddressbookTests
 
         public ContactData GetContactInformationFromTable(int index)
         {
-            
-            throw new NotImplementedException();
+
+            manager.Navigator.GoToHomePage();
+
         }
 
         public ContactData GetContactInformationFromEditForm(int index)
