@@ -112,7 +112,6 @@ namespace WebAddressbookTests
             driver.FindElements(By.Name("entry"))[index]
                 .FindElements(By.TagName("td"))[7]
                 .FindElement(By.TagName("a")).Click();
-            //driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
         }
 
         private List<ContactData> contactCache = null;
@@ -143,9 +142,9 @@ namespace WebAddressbookTests
 
         public ContactData GetContactInformationFromTable(int index)
         {
-
             manager.Navigator.GoToHomePage();
-
+            IList<IWebElement> cells = driver.FindElements(By.Name("entry"))[index].FindElements(By.TagName("td"));
+            
         }
 
         public ContactData GetContactInformationFromEditForm(int index)
