@@ -11,7 +11,7 @@ namespace WebAddressbookTests
     class ContactInformationTest : AuthTestBase
     {
         [Test]
-        public void testContactInformation()
+        public void TestContactInformation()
         {
             ContactData fromTable = app.Contacts.GetContactInformationFromTable(0);
             ContactData fromForm = app.Contacts.GetContactInformationFromEditForm(0);
