@@ -145,6 +145,19 @@ namespace WebAddressbookTests
             manager.Navigator.GoToHomePage();
             IList<IWebElement> cells = driver.FindElements(By.Name("entry"))[index].FindElements(By.TagName("td"));
             
+            string lastName = cells[1].Text;
+            string firstName = cells[2].Text;
+            string address = cells[3].Text;
+            string allEmails = cells[4].Text;
+            string allPhones = cells[5].Text;
+
+            return new ContactData(lastName)
+            {
+                Firstname = firstName,
+                Address = address,
+                AllPhones = allPhones,
+                AllEmails = allEmails
+            };
         }
 
         public ContactData GetContactInformationFromEditForm(int index)
@@ -159,7 +172,7 @@ namespace WebAddressbookTests
             string homePhone = driver.FindElement(By.Name("home")).GetAttribute("value");
             string mobilePhone = driver.FindElement(By.Name("mobile")).GetAttribute("value");
             string workPhone = driver.FindElement(By.Name("work")).GetAttribute("value");
-            string fax = driver.FindElement(By.Name("fax")).GetAttribute("value");
+            string phone2 = driver.FindElement(By.Name("phone2")).GetAttribute("value");
 
             string email = driver.FindElement(By.Name("email")).GetAttribute("value");
             string email2 = driver.FindElement(By.Name("email2")).GetAttribute("value");
@@ -172,7 +185,7 @@ namespace WebAddressbookTests
                 Home = homePhone,
                 Mobile = mobilePhone,
                 Work = workPhone,
-                Fax = fax,
+                Phone2 = phone2,
                 Email = email,
                 Email2 = email2,
                 Email3 = email3

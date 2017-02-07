@@ -8,6 +8,8 @@ namespace WebAddressbookTests
 {
     public class ContactData : IEquatable<ContactData>, IComparable<ContactData>
     {
+        private string allPhones;
+        private string allEmails;
         // Create class constructor
         public ContactData(string lastname)
         {
@@ -70,11 +72,62 @@ namespace WebAddressbookTests
 
         public string Fax { get; set; }
 
+        public string AllPhones 
+        {
+            get 
+            {
+                if (allPhones != null)
+                {
+                    return allPhones;
+                }
+                else
+                {
+                    return (Cleanup(Home) + Cleanup(Mobile) + Cleanup(Work) + Cleanup(Phone2)).Trim();
+                }
+            } 
+            set 
+            {
+                allPhones = value;
+            } 
+        }
+
+        private string Cleanup(string phone)
+        {
+            if (phone == null || phone == "")
+            {
+                return "";
+            }
+            else
+            {
+                return phone.Replace(" ", "").Replace("-", "").Replace("(", "").Replace(")", "") + "\r\n";
+            }
+        }
+
         public string Email { get; set; }
 
         public string Email2 { get; set; }
 
         public string Email3 { get; set; }
+
+        public string AllEmails 
+        { 
+            get 
+            {
+                if (allEmails != null)
+                {
+                    return allEmails;
+                }
+                else
+                {
+                    return Email + "\r\n" + Email2 + "\r\n" + Email3;
+                }
+            } 
+            
+            set 
+            {
+                allEmails = value;
+            } 
+        }
 
         public string Homepage { get; set; }
 
